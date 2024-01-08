@@ -1,18 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_margin="15dp"
+        android:gravity="center"
+        android:text="@string/numero_do_time"
+        android:textColor="@color/black"
+        android:textSize="40sp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="100dp"
+        android:background="@drawable/edit_text"
+        android:gravity="center"
+        android:hint="@string/hint_9219"
+        android:inputType="number"
+        android:textColor="@color/black"
+        android:textColorHint="@color/hint_text" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="15dp"
+        android:gravity="center"
+        android:text="@string/autonomo"
+        android:textColor="@color/black"
+        android:textSize="30sp" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="AMP"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="AMP"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:gravity="center"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:minHeight="50dp"
+        android:orientation="horizontal">
+
+
+        <ImageView
+            android:id="@+id/button_auto_remove_amp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/img_remove" />
+
+        <EditText
+            android:id="@+id/edit_auto_amp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/edit_text"
+            android:hint="10"
+            android:gravity="center"
+            android:textColorHint="@color/hint_text"
+            android:layout_marginHorizontal="8dp"
+            android:inputType="number"/>
+
+        <ImageView
+            android:id="@+id/button_auto_add_amp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/img_add"
+            android:layout_marginEnd="15dp"/>
+
+
+        <ImageView
+            android:id="@+id/button_auto_remove_speaker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/img_remove"
+
+            android:layout_marginStart="15dp"/>
+
+        <EditText
+            android:id="@+id/edit_auto_speaker"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/edit_text"
+            android:hint="10"
+            android:gravity="center"
+            android:textColorHint="@color/hint_text"
+            android:layout_marginHorizontal="8dp"
+            android:inputType="number"/>
+
+        <ImageView
+            android:id="@+id/button_auto_add_speaker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/img_add" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

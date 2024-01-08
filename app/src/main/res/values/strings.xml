@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">scout-app</string>
+    <string name="numero_do_time">Número do time</string>
+    <string name="hint_9219">9219</string>
+    <string name="autonomo"><u>Autônomo</u></string>
 </resources>
