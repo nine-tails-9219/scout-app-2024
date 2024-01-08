@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="logo_crescendo">#00d586</color>
+
+
+
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="background">#F1F1F1</color>
-    <color name="logo_crescendo">#00d586</color>
     <color name="hint_text">#6D000000</color>
     <color name="edit_text">#E6E6E6</color>
+    <color name="button_green">@color/logo_crescendo</color>
+    <color name="button_add">#07D500</color>
+    <color name="button_remove">#D50000</color>
 </resources>

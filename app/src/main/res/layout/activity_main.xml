@@ -6,7 +6,9 @@
     android:layout_height="match_parent"
     android:background="@color/background"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:gravity="center">
+
 
     <TextView
         android:layout_width="match_parent"
@@ -18,15 +20,18 @@
         android:textSize="40sp" />
 
     <EditText
+        android:id="@+id/edit_numero_equipe"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="100dp"
+        android:layout_marginHorizontal="130dp"
         android:background="@drawable/edit_text"
         android:gravity="center"
         android:hint="@string/hint_9219"
         android:inputType="number"
+        android:minWidth="100dp"
         android:textColor="@color/black"
-        android:textColorHint="@color/hint_text" />
+        android:textColorHint="@color/hint_text"
+        android:textSize="20sp" />
 
     <TextView
         android:layout_width="match_parent"
@@ -42,100 +47,100 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="AMP"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:gravity="center"/>
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="AMP"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:gravity="center"/>
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginHorizontal="40dp"
+        android:gravity="center"
         android:minHeight="50dp"
         android:orientation="horizontal">
-
 
         <ImageView
             android:id="@+id/button_auto_remove_amp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
+            android:layout_gravity="bottom"
             android:clickable="true"
             android:focusable="true"
             android:src="@drawable/img_remove" />
 
-        <EditText
-            android:id="@+id/edit_auto_amp"
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/edit_text"
-            android:hint="10"
             android:gravity="center"
-            android:textColorHint="@color/hint_text"
-            android:layout_marginHorizontal="8dp"
-            android:inputType="number"/>
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/amp"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/edit_auto_amp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="8dp"
+                android:background="@drawable/edit_text"
+                android:gravity="center"
+                android:hint="@string/edit_hint_quantidade"
+                android:inputType="number"
+                android:textColor="@color/black"
+                android:textColorHint="@color/hint_text" />
+
+        </LinearLayout>
 
         <ImageView
             android:id="@+id/button_auto_add_amp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
+            android:layout_gravity="bottom"
+            android:layout_marginEnd="15dp"
             android:clickable="true"
             android:focusable="true"
-            android:src="@drawable/img_add"
-            android:layout_marginEnd="15dp"/>
-
+            android:src="@drawable/img_add" />
 
         <ImageView
             android:id="@+id/button_auto_remove_speaker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
+            android:layout_gravity="bottom"
             android:clickable="true"
             android:focusable="true"
-            android:src="@drawable/img_remove"
+            android:src="@drawable/img_remove" />
 
-            android:layout_marginStart="15dp"/>
-
-        <EditText
-            android:id="@+id/edit_auto_speaker"
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/edit_text"
-            android:hint="10"
             android:gravity="center"
-            android:textColorHint="@color/hint_text"
-            android:layout_marginHorizontal="8dp"
-            android:inputType="number"/>
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/speaker"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/edit_auto_speaker"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="8dp"
+                android:background="@drawable/edit_text"
+                android:gravity="center"
+                android:hint="@string/edit_hint_quantidade"
+                android:inputType="number"
+                android:textColor="@color/black"
+                android:textColorHint="@color/hint_text" />
+
+        </LinearLayout>
 
         <ImageView
             android:id="@+id/button_auto_add_speaker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
+            android:layout_gravity="bottom"
             android:clickable="true"
             android:focusable="true"
             android:src="@drawable/img_add" />
@@ -143,5 +148,205 @@
 
     </LinearLayout>
 
+    <CheckBox
+        android:id="@+id/checkbox_leave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:text="@string/leave"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:buttonTint="@color/logo_crescendo"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="15dp"
+        android:gravity="center"
+        android:text="@string/teleoperado"
+        android:textColor="@color/black"
+        android:textSize="30sp" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:gravity="center"
+        android:minHeight="50dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/button_teleop_remove_amp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/img_remove" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/amp"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/edit_teleop_amp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="8dp"
+                android:background="@drawable/edit_text"
+                android:gravity="center"
+                android:hint="@string/edit_hint_quantidade"
+                android:inputType="number"
+                android:textColor="@color/black"
+                android:textColorHint="@color/hint_text" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/button_teleop_add_amp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginEnd="15dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/img_add" />
+
+        <ImageView
+            android:id="@+id/button_teleop_remove_speaker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/img_remove" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/speaker"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/edit_teleop_speaker"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="8dp"
+                android:background="@drawable/edit_text"
+                android:gravity="center"
+                android:hint="@string/edit_hint_quantidade"
+                android:inputType="number"
+                android:textColor="@color/black"
+                android:textColorHint="@color/hint_text" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/button_teleop_add_speaker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/img_add" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+
+        <CheckBox
+            android:id="@+id/checkbox_park"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="30dp"
+            android:text="@string/park"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:minHeight="20dp"
+            android:buttonTint="@color/logo_crescendo"/>
+
+        <CheckBox
+            android:id="@+id/checkbox_onstage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:text="@string/onstage"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:minHeight="20dp"
+            android:buttonTint="@color/logo_crescendo"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+
+        <CheckBox
+            android:id="@+id/checkbox_note_trap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="30dp"
+            android:text="@string/note_in_trap"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:minHeight="20dp"
+            android:buttonTint="@color/logo_crescendo"/>
+
+        <CheckBox
+            android:id="@+id/checkbox_harmony"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:text="@string/harmony"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:minHeight="20dp"
+            android:buttonTint="@color/logo_crescendo"/>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/gerar_relatario"
+        android:background="@drawable/button"
+        android:textColor="@color/black"
+        android:layout_marginHorizontal="100dp"
+        android:layout_marginTop="30dp"
+        android:textSize="17sp"/>
 
 </LinearLayout>
