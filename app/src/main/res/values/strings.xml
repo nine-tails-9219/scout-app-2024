@@ -1,16 +1,18 @@
 <resources>
     <string name="app_name">scout-app</string>
-    <string name="numero_do_time"><u>Número do time</u></string>
+    <string name="numero_do_time">N° TIME</string>
+    <string name="numero_da_partida">N° PARTIDA</string>
     <string name="hint_9219">9219</string>
     <string name="autonomo"><u>Autônomo</u></string>
     <string name="amp">AMP</string>
     <string name="speaker">SPEAKER</string>
-    <string name="leave">LEAVE</string>
+    <string name="community">COMMUNITY</string>
     <string name="teleoperado"><u>Teleoperado</u></string>
     <string name="onstage">ONSTAGE</string>
     <string name="note_in_trap">NOTE IN TRAP</string>
     <string name="harmony">HARMONY</string>
-    <string name="gerar_relatario">GERAR RELATÓRIO</string>
     <string name="edit_hint_quantidade">0</string>
     <string name="park">PARK</string>
+    <string name="enviar_dados">ENVIAR DADOS</string>
+    <string name="scout"><u>Scout</u></string>
 </resources>

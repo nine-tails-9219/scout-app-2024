@@ -5,33 +5,90 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
+    android:gravity="center"
     android:orientation="vertical"
-    tools:context=".MainActivity"
-    android:gravity="center">
-
+    tools:context=".MainActivity">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="15dp"
+        android:layout_marginTop="-20dp"
+        android:layout_marginBottom="30dp"
+        android:fontFamily="sans-serif-black"
         android:gravity="center"
-        android:text="@string/numero_do_time"
+        android:text="@string/scout"
         android:textColor="@color/black"
         android:textSize="40sp" />
 
-    <EditText
-        android:id="@+id/edit_numero_equipe"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="130dp"
-        android:background="@drawable/edit_text"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="10dp"
         android:gravity="center"
-        android:hint="@string/hint_9219"
-        android:inputType="number"
-        android:minWidth="100dp"
-        android:textColor="@color/black"
-        android:textColorHint="@color/hint_text"
-        android:textSize="20sp" />
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/numero_da_partida"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/edit_numero_partida"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="8dp"
+                android:background="@drawable/edit_text"
+                android:gravity="center"
+                android:hint="@string/edit_hint_quantidade"
+                android:inputType="number"
+
+                android:text="@string/edit_hint_quantidade"
+                android:textColor="@color/black"
+                android:textColorHint="@color/hint_text" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/numero_do_time"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/edit_numero_time"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="8dp"
+                android:background="@drawable/edit_text"
+                android:gravity="center"
+                android:hint="@string/hint_9219"
+                android:inputType="number"
+                android:text="@string/hint_9219"
+                android:textColor="@color/black"
+
+                android:textColorHint="@color/hint_text" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
     <TextView
         android:layout_width="match_parent"
@@ -42,7 +99,6 @@
         android:text="@string/autonomo"
         android:textColor="@color/black"
         android:textSize="30sp" />
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -84,6 +140,7 @@
                 android:gravity="center"
                 android:hint="@string/edit_hint_quantidade"
                 android:inputType="number"
+                android:text="@string/edit_hint_quantidade"
                 android:textColor="@color/black"
                 android:textColorHint="@color/hint_text" />
 
@@ -131,6 +188,7 @@
                 android:gravity="center"
                 android:hint="@string/edit_hint_quantidade"
                 android:inputType="number"
+                android:text="@string/edit_hint_quantidade"
                 android:textColor="@color/black"
                 android:textColorHint="@color/hint_text" />
 
@@ -149,16 +207,15 @@
     </LinearLayout>
 
     <CheckBox
-        android:id="@+id/checkbox_leave"
+        android:id="@+id/checkbox_community"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="8dp"
-        android:text="@string/leave"
+        android:buttonTint="@color/logo_crescendo"
+        android:text="@string/community"
         android:textColor="@color/black"
-        android:textSize="15sp"
-        android:buttonTint="@color/logo_crescendo"/>
-
+        android:textSize="15sp" />
 
     <TextView
         android:layout_width="match_parent"
@@ -169,7 +226,6 @@
         android:text="@string/teleoperado"
         android:textColor="@color/black"
         android:textSize="30sp" />
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -211,6 +267,7 @@
                 android:gravity="center"
                 android:hint="@string/edit_hint_quantidade"
                 android:inputType="number"
+                android:text="@string/edit_hint_quantidade"
                 android:textColor="@color/black"
                 android:textColorHint="@color/hint_text" />
 
@@ -258,6 +315,7 @@
                 android:gravity="center"
                 android:hint="@string/edit_hint_quantidade"
                 android:inputType="number"
+                android:text="@string/edit_hint_quantidade"
                 android:textColor="@color/black"
                 android:textColorHint="@color/hint_text" />
 
@@ -277,9 +335,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="10dp"
         android:gravity="center"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp">
+        android:orientation="horizontal">
 
         <CheckBox
             android:id="@+id/checkbox_park"
@@ -287,22 +345,22 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginEnd="30dp"
+            android:buttonTint="@color/logo_crescendo"
+            android:minHeight="20dp"
             android:text="@string/park"
             android:textColor="@color/black"
-            android:textSize="15sp"
-            android:minHeight="20dp"
-            android:buttonTint="@color/logo_crescendo"/>
+            android:textSize="15sp" />
 
         <CheckBox
-            android:id="@+id/checkbox_onstage"
+            android:id="@+id/checkbox_onStage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
+            android:buttonTint="@color/logo_crescendo"
+            android:minHeight="20dp"
             android:text="@string/onstage"
             android:textColor="@color/black"
-            android:textSize="15sp"
-            android:minHeight="20dp"
-            android:buttonTint="@color/logo_crescendo"/>
+            android:textSize="15sp" />
 
     </LinearLayout>
 
@@ -310,9 +368,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="10dp"
         android:gravity="center"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp">
+        android:orientation="horizontal">
 
         <CheckBox
             android:id="@+id/checkbox_note_trap"
@@ -320,33 +378,34 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginEnd="30dp"
+            android:buttonTint="@color/logo_crescendo"
+            android:minHeight="20dp"
             android:text="@string/note_in_trap"
             android:textColor="@color/black"
-            android:textSize="15sp"
-            android:minHeight="20dp"
-            android:buttonTint="@color/logo_crescendo"/>
+            android:textSize="15sp" />
 
         <CheckBox
             android:id="@+id/checkbox_harmony"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
+            android:buttonTint="@color/logo_crescendo"
+            android:minHeight="20dp"
             android:text="@string/harmony"
             android:textColor="@color/black"
-            android:textSize="15sp"
-            android:minHeight="20dp"
-            android:buttonTint="@color/logo_crescendo"/>
+            android:textSize="15sp" />
 
     </LinearLayout>
 
     <Button
+        android:id="@+id/button_enviar_dados"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/gerar_relatario"
-        android:background="@drawable/button"
-        android:textColor="@color/black"
         android:layout_marginHorizontal="100dp"
         android:layout_marginTop="30dp"
-        android:textSize="17sp"/>
+        android:background="@drawable/button"
+        android:text="@string/enviar_dados"
+        android:textColor="@color/black"
+        android:textSize="17sp" />
 
 </LinearLayout>
