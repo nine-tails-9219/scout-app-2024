@@ -2,6 +2,7 @@ package com.example.scout_app
 
 import android.os.Bundle
 import android.text.Editable
+import android.view.View
 import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.Toast
@@ -52,8 +53,24 @@ class MainActivity : AppCompatActivity() {
         //endregion
 
         binding.buttonEnviarDados.setOnClickListener {
-            enviarDados()
+            if (binding.editNumeroPartida.text.toString().toInt() > 0 && binding.editNumeroTime.text.toString().toInt() > 0){
+                startLoading()
+                enviarDados()
+            } else {
+                Toast.makeText(applicationContext, "Insira os dados", Toast.LENGTH_SHORT).show()
+            }
         }
+    }
+
+
+    private fun startLoading() {
+        binding.imageBackgroundLoading.visibility = View.VISIBLE
+        binding.progressBarLoading.visibility = View.VISIBLE
+    }
+
+    private fun finishLoading() {
+        binding.imageBackgroundLoading.visibility = View.GONE
+        binding.progressBarLoading.visibility = View.GONE
     }
 
     private fun enviarDados() {
@@ -82,9 +99,13 @@ class MainActivity : AppCompatActivity() {
             Request.Method.POST, url,
             Response.Listener {
                 Toast.makeText(applicationContext, it.toString(), Toast.LENGTH_SHORT).show()
+                finishLoading()
+                clearEdits()
             },
             Response.ErrorListener {
                 Toast.makeText(applicationContext, it.toString(), Toast.LENGTH_SHORT).show()
+                finishLoading()
+                clearEdits()
             }){
             override fun getParams(): MutableMap<String, String>? {
                 val params = HashMap<String, String>()
@@ -115,6 +136,24 @@ class MainActivity : AppCompatActivity() {
         val queue = Volley.newRequestQueue(applicationContext)
         queue.add(stringRequest)
 
+    }
+
+    private fun clearEdits() {
+        binding.editNumeroPartida.setText("0")
+        binding.editNumeroTime.setText("0")
+
+        binding.editAutoAmp.setText("0")
+        binding.editAutoSpeaker.setText("0")
+        binding.checkboxCommunity.isChecked = false
+
+
+        binding.editTeleopAmp.setText("0")
+        binding.editTeleopSpeaker.setText("0")
+
+        binding.checkboxPark.isChecked = false
+        binding.checkboxOnStage.isChecked = false
+        binding.checkboxNoteTrap.isChecked = false
+        binding.checkboxHarmony.isChecked = false
     }
 
     private fun calcularTotalAutonomo(autonomoSpeaker: Editable?, autonomoAmp: Editable?, community: CheckBox): Int {

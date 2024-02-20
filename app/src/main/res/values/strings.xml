@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">scout-app</string>
+    <string name="app_name">Nine Scout</string>
     <string name="numero_do_time">N° TIME</string>
     <string name="numero_da_partida">N° PARTIDA</string>
     <string name="hint_9219">9219</string>
