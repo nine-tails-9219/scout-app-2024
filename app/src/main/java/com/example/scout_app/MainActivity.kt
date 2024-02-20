@@ -1,6 +1,8 @@
 package com.example.scout_app
 
 import android.os.Bundle
+import android.text.Editable
+import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -12,7 +14,6 @@ import com.example.scout_app.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    //private val url: String = "https://script.google.com/macros/s/AKfycbzJxXokP3FDnbTHX0h6VxO7-JNXQiezFZekZP_8Zi8z2YJgWEGLU5A2WeGBtrOlpTK0/exec"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,17 +62,22 @@ class MainActivity : AppCompatActivity() {
 
         val autonomoSpeaker = binding.editAutoSpeaker.text
         val autonomoAmp = binding.editAutoAmp.text
-        val community = binding.checkboxCommunity.isActivated.toString()
+        val community = binding.checkboxCommunity
 
         val teleoperadoSpeaker = binding.editTeleopSpeaker.text
         val teleoperadoAmp = binding.editTeleopAmp.text
 
-        val park = binding.checkboxPark.isActivated.toString()
-        val onStage = binding.checkboxOnStage.isActivated.toString()
-        val noteInTrap = binding.checkboxNoteTrap.isActivated.toString()
-        val harmony = binding.checkboxHarmony.isActivated.toString()
+        val park = binding.checkboxPark
+        val onStage = binding.checkboxOnStage
+        val noteInTrap = binding.checkboxNoteTrap
+        val harmony = binding.checkboxHarmony
 
-        val url = "https://script.google.com/macros/s/AKfycbwB61WAIdgdBI7229RqQRKDNNUR50Tn_SVwfXjsZebxRAkmZRoh4KRh70mcRE26cl9YNQ/exec"
+
+        val totalAutonomo = calcularTotalAutonomo(autonomoSpeaker, autonomoAmp, community)
+        val totalTeleoperado = calcularTotalTeleoperado(teleoperadoSpeaker, teleoperadoAmp)
+        val totalEndGame = calcularTotalEndGame(park, onStage, noteInTrap, harmony)
+
+        val url = "https://script.google.com/macros/s/AKfycbzkGgE-_yjcXJXdUwPqQp-0a5OkFZ_Gzoro2q9orDmwqsAf8SjQCd63VqoPVPqY79YGew/exec"
         val stringRequest = object : StringRequest(
             Request.Method.POST, url,
             Response.Listener {
@@ -88,15 +94,20 @@ class MainActivity : AppCompatActivity() {
 
                 params["autonomoSpeaker"] = autonomoSpeaker.toString()
                 params["autonomoAmp"] = autonomoAmp.toString()
-                params["community"] = community
+                params["community"] = community.isChecked.toString()
 
                 params["teleoperadoSpeaker"] = teleoperadoSpeaker.toString()
                 params["teleoperadoAmp"] = teleoperadoAmp.toString()
 
-                params["park"] = park
-                params["onStage"] = onStage
-                params["noteInTrap"] = noteInTrap
-                params["harmony"] = harmony
+                params["park"] = park.isChecked.toString()
+                params["onStage"] = onStage.isChecked.toString()
+                params["noteInTrap"] = noteInTrap.isChecked.toString()
+                params["harmony"] = harmony.isChecked.toString()
+
+                params["totalAutonomo"] = totalAutonomo.toString()
+                params["totalTeleoperado"] = totalTeleoperado.toString()
+                params["totalEndGame"] = totalEndGame.toString()
+                params["totalGeral"] = (totalAutonomo + totalTeleoperado + totalEndGame).toString()
 
                 return params
             }
@@ -106,10 +117,39 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    private fun calcularTotalAutonomo(autonomoSpeaker: Editable?, autonomoAmp: Editable?, community: CheckBox): Int {
+        if (community.isChecked) {
+            return (autonomoSpeaker.toString().toInt() * 5) + (autonomoAmp.toString().toInt() * 2) + 2
+        } else {
+            return (autonomoSpeaker.toString().toInt() * 5) + (autonomoAmp.toString().toInt() * 2)
+        }
+    }
+
+    private fun calcularTotalTeleoperado(teleoperadoSpeaker: Editable?, teleoperadoAmp: Editable?): Int {
+        return (teleoperadoSpeaker.toString().toInt() * 3) + (teleoperadoAmp.toString().toInt())
+    }
+
+    private fun calcularTotalEndGame(park: CheckBox, onStage: CheckBox, noteInTrap: CheckBox, harmony: CheckBox): Int {
+        var total = 0
+        if (park.isChecked) {
+            total += 1
+        }
+        if (onStage.isChecked) {
+            total += 3
+        }
+        if (noteInTrap.isChecked) {
+            total += 5
+        }
+        if (harmony.isChecked) {
+            total += 2
+        }
+        return total
+    }
+
     //region Funções para interagir com a tela
 
     private fun decreaseNumber(editText: EditText) {
-        if (editText.text.isNotEmpty() || editText.text.toString() != "0") {
+        if (editText.text.isNotEmpty() && editText.text.toString().toInt() > 0) {
             editText.setText((editText.text.toString().toInt()-1).toString())
         }
     }

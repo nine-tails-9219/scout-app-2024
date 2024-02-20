@@ -17,7 +17,7 @@
         android:fontFamily="sans-serif-black"
         android:gravity="center"
         android:text="@string/scout"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="40sp" />
 
     <LinearLayout
@@ -39,7 +39,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/numero_da_partida"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="15sp" />
 
             <EditText
@@ -69,7 +69,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/numero_do_time"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="15sp" />
 
             <EditText
@@ -81,7 +81,7 @@
                 android:gravity="center"
                 android:hint="@string/hint_9219"
                 android:inputType="number"
-                android:text="@string/hint_9219"
+                android:text="@string/edit_hint_quantidade"
                 android:textColor="@color/black"
 
                 android:textColorHint="@color/hint_text" />
@@ -97,7 +97,7 @@
         android:layout_marginBottom="15dp"
         android:gravity="center"
         android:text="@string/autonomo"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="30sp" />
 
     <LinearLayout
@@ -128,7 +128,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/amp"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="15sp" />
 
             <EditText
@@ -176,7 +176,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/speaker"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="15sp" />
 
             <EditText
@@ -214,7 +214,7 @@
         android:layout_marginTop="8dp"
         android:buttonTint="@color/logo_crescendo"
         android:text="@string/community"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="15sp" />
 
     <TextView
@@ -224,7 +224,7 @@
         android:layout_marginBottom="15dp"
         android:gravity="center"
         android:text="@string/teleoperado"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="30sp" />
 
     <LinearLayout
@@ -255,7 +255,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/amp"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="15sp" />
 
             <EditText
@@ -303,7 +303,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/speaker"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="15sp" />
 
             <EditText
@@ -348,7 +348,7 @@
             android:buttonTint="@color/logo_crescendo"
             android:minHeight="20dp"
             android:text="@string/park"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="15sp" />
 
         <CheckBox
@@ -359,7 +359,7 @@
             android:buttonTint="@color/logo_crescendo"
             android:minHeight="20dp"
             android:text="@string/onstage"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="15sp" />
 
     </LinearLayout>
@@ -381,7 +381,7 @@
             android:buttonTint="@color/logo_crescendo"
             android:minHeight="20dp"
             android:text="@string/note_in_trap"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="15sp" />
 
         <CheckBox
@@ -392,7 +392,7 @@
             android:buttonTint="@color/logo_crescendo"
             android:minHeight="20dp"
             android:text="@string/harmony"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="15sp" />
 
     </LinearLayout>
@@ -405,7 +405,9 @@
         android:layout_marginTop="30dp"
         android:background="@drawable/button"
         android:text="@string/enviar_dados"
-        android:textColor="@color/black"
-        android:textSize="17sp" />
+        android:fontFamily="sans-serif-black"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
 
 </LinearLayout>

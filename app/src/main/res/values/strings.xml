@@ -14,5 +14,5 @@
     <string name="edit_hint_quantidade">0</string>
     <string name="park">PARK</string>
     <string name="enviar_dados">ENVIAR DADOS</string>
-    <string name="scout"><u>Scout</u></string>
+    <string name="scout">Scout</string>
 </resources>
