@@ -54,12 +54,44 @@ class MainActivity : AppCompatActivity() {
 
         binding.buttonEnviarDados.setOnClickListener {
             if (binding.editNumeroPartida.text.toString().toInt() > 0 && binding.editNumeroTime.text.toString().toInt() > 0){
-                startLoading()
-                enviarDados()
+                mostrarLayoutConfimacao()
             } else {
                 Toast.makeText(applicationContext, "Insira os dados", Toast.LENGTH_SHORT).show()
             }
         }
+
+        binding.buttonConfirmarEnvio.setOnClickListener {
+            fecharLayoutConfirmacao()
+            startLoading()
+            enviarDados()
+        }
+
+        binding.buttonCancelarEnvio.setOnClickListener {
+            fecharLayoutConfirmacao()
+        }
+
+        binding.imageBackgroundConfirmacao.setOnClickListener {
+            fecharLayoutConfirmacao()
+        }
+
+        binding.layoutPopup.animate().translationY(500F)
+    }
+
+    private fun fecharLayoutConfirmacao() {
+        binding.imageBackgroundConfirmacao.visibility = View.GONE
+        binding.layoutPopup.animate().translationY(binding.layoutPopup.measuredHeight.toFloat())
+            .setDuration(
+                resources.getInteger(android.R.integer.config_mediumAnimTime).toLong()
+            )
+
+    }
+
+    private fun mostrarLayoutConfimacao() {
+        binding.imageBackgroundConfirmacao.visibility = View.VISIBLE
+        binding.layoutPopup.visibility = View.VISIBLE
+        binding.layoutPopup.animate().translationY(9F).setDuration(
+            resources.getInteger(android.R.integer.config_mediumAnimTime).toLong()
+        )
     }
 
 
