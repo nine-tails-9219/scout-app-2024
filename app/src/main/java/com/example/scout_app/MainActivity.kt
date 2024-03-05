@@ -126,7 +126,7 @@ class MainActivity : AppCompatActivity() {
         val totalTeleoperado = calcularTotalTeleoperado(teleoperadoSpeaker, teleoperadoAmp)
         val totalEndGame = calcularTotalEndGame(park, onStage, noteInTrap, harmony)
 
-        val url = "https://script.google.com/macros/s/AKfycbzkGgE-_yjcXJXdUwPqQp-0a5OkFZ_Gzoro2q9orDmwqsAf8SjQCd63VqoPVPqY79YGew/exec"
+        val url = "link"
         val stringRequest = object : StringRequest(
             Request.Method.POST, url,
             Response.Listener {
